@@ -1,0 +1,39 @@
+# Routes Config
+#
+# This file defines all application routes (Higher priority routes first)
+#
+
+module:testrunner
+# module:jobs
+
+
+#GET     /                                       App.Index
+
+# Ignore favicon requests
+#GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/*filepath                       Static.Serve("public")
+
+# Catch all, this will route any request into the controller path
+#
+#                    **** WARNING ****
+# Enabling this exposes any controller and function to the web.
+# ** This is a serious security issue if used online **
+#
+# For rapid development uncomment the following to add new controller.action endpoints
+# without having to add them to the routes table.
+# *       /:controller/:action                    :controller.:action
+POST /app/upload                    App.HandleUpload
+#-----------------Smiley Api ------------------
+POST /api/smiley/add                    Smiley.Add
+POST /api/smiley/upload                    Smiley.Upload
+GET /api/smiley/list                    Smiley.List
+#-----------------Staff Api ------------------
+GET /api/staff/add                    Staff.Add
+POST /api/staff/upload                    Staff.Upload
+#-----------------SurveyStaff Api ------------------
+POST /api/survey/add                           Survey.Add
+GET /api/survey/list                           Survey.List
+POST /api/survey/device_add                    Survey.AddSurveyDevice
+GET /api/survey/delete/:id                     Survey.Delete
