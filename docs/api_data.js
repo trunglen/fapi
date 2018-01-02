@@ -11,17 +11,17 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "survey_id",
+            "type": "String",
             "optional": false,
-            "field": "Survey",
-            "description": "<p>ID No</p>"
+            "field": "survey_id",
+            "description": "<p>Survey ID No</p>"
           },
           {
             "group": "Parameter",
-            "type": "device_id",
+            "type": "String",
             "optional": false,
-            "field": "Device",
-            "description": "<p>ID No</p>"
+            "field": "device_id",
+            "description": "<p>Device ID No</p>"
           }
         ]
       },
