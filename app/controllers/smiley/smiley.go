@@ -5,8 +5,9 @@ import (
 	"g/x/web"
 	"io/ioutil"
 	"os"
-	xcontroller "revel-modules/xcontroller/app/controllers"
 	"tamson/app/models"
+
+	xcontroller "github.com/trunglen/revel-modules/xcontroller/app/controllers"
 
 	"github.com/revel/revel"
 )

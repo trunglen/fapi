@@ -2,7 +2,8 @@ package models
 
 import (
 	"g/x/math"
-	mongodb "revel-modules/mongodb/app"
+
+	mongodb "github.com/trunglen/revel-modules/mongodb/app"
 
 	"gopkg.in/mgo.v2/bson"
 
@@ -63,7 +64,7 @@ func (s *Survey) Create() error {
 }
 
 func AddDeviceToSurvey(deviceID string, surveyID string) error {
-	return newSurveyDeviceCollection().Session.UpdateId(surveyID, bson.M{
+	return newSurveyCollection().Session.UpdateId(surveyID, bson.M{
 		"$addToSet": bson.M{
 			"device_ids": []string{deviceID},
 		},

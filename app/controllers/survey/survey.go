@@ -2,8 +2,10 @@ package survey
 
 import (
 	"fapi/app/models"
+	"fmt"
 	"g/x/web"
-	xcontroller "revel-modules/xcontroller/app/controllers"
+
+	xcontroller "github.com/trunglen/revel-modules/xcontroller/app/controllers"
 
 	"github.com/revel/revel"
 )
@@ -32,10 +34,11 @@ func (c Survey) Delete(id string) revel.Result {
 
 func (c Survey) AddSurveyDevice() revel.Result {
 	var surveyDevice = struct {
-		SurveyID string `bson:"survey_id" json:"survey_id"`
-		DeviceID string `bson:"device_id" json:"device_id"`
+		SurveyID string `json:"survey_id"`
+		DeviceID string `json:"device_id"`
 	}{}
 	c.MustDecodeBody(&surveyDevice)
+	fmt.Println(surveyDevice)
 	web.AssertNil(models.AddDeviceToSurvey(surveyDevice.DeviceID, surveyDevice.SurveyID))
 	return c.Success()
 }

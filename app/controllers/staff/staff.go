@@ -3,7 +3,8 @@ package staff
 import (
 	"io/ioutil"
 	"os"
-	xcontroller "revel-modules/xcontroller/app/controllers"
+
+	xcontroller "github.com/trunglen/revel-modules/xcontroller/app/controllers"
 
 	"github.com/revel/revel"
 )

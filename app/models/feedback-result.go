@@ -1,7 +1,7 @@
 package models
 
 import (
-	mongodb "revel-modules/mongodb/app"
+	mongodb "github.com/trunglen/revel-modules/mongodb/app"
 )
 
 type FeedbackResult struct {
