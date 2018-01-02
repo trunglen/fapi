@@ -35,5 +35,5 @@ POST /api/staff/upload                    Staff.Upload
 #-----------------SurveyStaff Api ------------------
 POST /api/survey/add                           Survey.Add
 GET /api/survey/list                           Survey.List
-POST /api/survey/device_add                    Survey.AddSurveyDevice
+POST /api/survey/device/add                    Survey.AddSurveyDevice
 GET /api/survey/delete/:id                     Survey.Delete

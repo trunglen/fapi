@@ -31,8 +31,11 @@ func (c Survey) Delete(id string) revel.Result {
 }
 
 func (c Survey) AddSurveyDevice() revel.Result {
-	var surveyDevice *models.SurveyDevice
+	var surveyDevice = struct {
+		SurveyID string `bson:"survey_id" json:"survey_id"`
+		DeviceID string `bson:"device_id" json:"device_id"`
+	}{}
 	c.MustDecodeBody(&surveyDevice)
-	web.AssertNil(surveyDevice.Create())
-	return c.SendData(surveyDevice)
+	web.AssertNil(models.AddDeviceToSurvey(surveyDevice.DeviceID, surveyDevice.SurveyID))
+	return c.Success()
 }

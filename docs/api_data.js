@@ -1,5 +1,60 @@
 define({ "api": [
   {
+    "type": "POST",
+    "url": "/api/survey/device/add",
+    "title": "Add survey to device",
+    "name": "Add_survey_to_device_api",
+    "group": "Survey",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "survey_id",
+            "optional": false,
+            "field": "Survey",
+            "description": "<p>ID No</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "device_id",
+            "optional": false,
+            "field": "Device",
+            "description": "<p>ID No</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "{\n    device_id : 'device_1',\n    survey_id : 'survey_1'\n}",
+          "type": "Object"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    data : null,\n    status : 'success'\n}",
+          "type": "type"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Not found survey Response:",
+          "content": "{\n    \"error\":\"not found\",\n    \"status\":\"error\"\n }",
+          "type": "Object"
+        }
+      ]
+    },
+    "filename": "app/apidoc/survey.js",
+    "groupTitle": "Survey"
+  },
+  {
     "type": "GET",
     "url": "/api/survey/list",
     "title": "Get All Surveys List Api",

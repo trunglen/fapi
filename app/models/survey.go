@@ -13,6 +13,7 @@ type Survey struct {
 	BaseModel `bson:",inline"`
 	Name      string     `bson:"name" json:"name"`
 	Questions []Question `bson:"questions" json:"questions"`
+	DeviceID  []string   `bson:"device_ids" json:"device_ids"`
 }
 type Question struct {
 	ID      string     `bson:"id" json:"id"`
@@ -59,6 +60,14 @@ func (s *Survey) Create() error {
 	s.ID = math.RandString("srv", 4)
 	s.BeforeCreate()
 	return newSurveyCollection().Session.Insert(s)
+}
+
+func AddDeviceToSurvey(deviceID string, surveyID string) error {
+	return newSurveyDeviceCollection().Session.UpdateId(surveyID, bson.M{
+		"$addToSet": bson.M{
+			"device_ids": []string{deviceID},
+		},
+	})
 }
 
 type QuestionValidator struct {
