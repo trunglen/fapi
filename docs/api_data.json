@@ -21,7 +21,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n    data : [],\n    status:'success'\n}",
+          "content": "{\n \"data\": [\n     {\n     \"id\": \"srv_xlOv\",\n     \"dtime\": 0,\n     \"mtime\": 0,\n     \"ctime\": 1514863061,\n     \"name\": \"survey 1\",\n     \"questions\": [\n         {\n         \"id\": \"\",\n         \"content\": \"cau hoi thu 1\",\n         \"summary\": \"summary 1\",\n         \"type\": \"single\",\n         \"point\": 100,\n         \"manded\": true,\n         \"answers\": [\n             {\n             \"icon\": \"smiley1\",\n             \"content\": \"answer content 1\",\n             \"point\": 30,\n             \"link\": \"\"\n             }\n         ]\n         },\n         {\n         \"id\": \"\",\n         \"content\": \"cau hoi thu 2\",\n         \"summary\": \"summary 2\",\n         \"type\": \"multiple\",\n         \"point\": 100,\n         \"manded\": true,\n         \"answers\": [\n             {\n             \"icon\": \"\",\n             \"content\": \"answer content 1\",\n             \"point\": 30,\n             \"link\": \"\"\n             }\n         ]\n         },\n         {\n         \"id\": \"\",\n         \"content\": \"cau hoi tra loi\",\n         \"summary\": \"summary 2\",\n         \"type\": \"answer\",\n         \"point\": 100,\n         \"manded\": true,\n         \"answers\": []\n         }\n     ]\n     }\n ],\n \"status\": \"success\"\n }",
           "type": "Object"
         }
       ]
