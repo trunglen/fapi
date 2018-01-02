@@ -59,7 +59,7 @@ define({ "api": [
     "url": "/api/survey/list",
     "title": "Get All Surveys List Api",
     "name": "No",
-    "group": "Surveys",
+    "group": "Survey",
     "version": "1.0.0",
     "success": {
       "fields": {
@@ -82,14 +82,14 @@ define({ "api": [
       ]
     },
     "filename": "app/apidoc/survey.js",
-    "groupTitle": "Surveys"
+    "groupTitle": "Survey"
   },
   {
     "type": "POST",
     "url": "/api/survey/add",
     "title": "Add Survey Api",
     "name": "apiName",
-    "group": "Surveys",
+    "group": "Survey",
     "version": "1.0.0",
     "parameter": {
       "fields": {
@@ -170,6 +170,6 @@ define({ "api": [
       ]
     },
     "filename": "app/apidoc/survey.js",
-    "groupTitle": "Surveys"
+    "groupTitle": "Survey"
   }
 ] });
